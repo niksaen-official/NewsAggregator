@@ -4,12 +4,12 @@ import com.example.newsaggregator.data.convertors.NewsConverter
 import com.example.newsaggregator.data.local.dao.NewsDao
 import com.example.newsaggregator.data.remote.RssFeed
 import com.example.newsaggregator.data.remote.dto.ItemDto
-import com.example.newsaggregator.domain.repository.NewsLoaderRepository
+import com.example.newsaggregator.domain.repository.LoaderRepository
 import javax.inject.Inject
 
 class NewsLoaderRepositoryImpl @Inject constructor(
     private val rssFeed: RssFeed,
-    private val newsDao: NewsDao) : NewsLoaderRepository<ItemDto>{
+    private val newsDao: NewsDao) : LoaderRepository<ItemDto>{
 
     private val converter = NewsConverter()
 

@@ -1,18 +1,10 @@
 package com.example.newsaggregator.ui.main
 
-import android.content.Context
-import android.net.ConnectivityManager
-import android.net.NetworkCapabilities
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.newsaggregator.data.local.dao.NewsDao
-import com.example.newsaggregator.data.remote.RssFeed
 import com.example.newsaggregator.data.remote.dto.ItemDto
-import com.example.newsaggregator.data.convertors.NewsConverter
 import com.example.newsaggregator.data.network.NetworkStatusChecker
 import com.example.newsaggregator.data.repository.NewsLoaderRepositoryImpl
-import com.example.newsaggregator.domain.repository.NewsLoaderRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
