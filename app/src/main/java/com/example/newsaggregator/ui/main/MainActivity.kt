@@ -96,7 +96,7 @@ class MainActivity : ComponentActivity() {
         if (!vm.isOnline && showWarningDialog.value) {
             WarningDialog(
                 onConfirm = {showWarningDialog.value = false},
-                onDismiss = {showWarningDialog.value = false}
+                onDismiss = {showWarningDialog.value = false;finish()}
             )
         }
 

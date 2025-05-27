@@ -9,7 +9,7 @@ import com.example.newsaggregator.data.remote.dto.ItemDto
 import com.example.newsaggregator.domain.repository.LoaderRepository
 import javax.inject.Inject
 
-class NewsLoaderRepositoryImpl @Inject constructor(
+class NewsLoaderRepositoryImpl(
     private val rssFeed: RssFeed,
     private val newsDao: NewsDao) : LoaderRepository<ItemDto>{
 

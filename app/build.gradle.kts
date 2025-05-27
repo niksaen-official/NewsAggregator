@@ -92,10 +92,19 @@ dependencies {
     implementation(libs.androidx.room.ktx)
     ksp(libs.androidx.room.compiler)
 
-    // hilt
+    // WorkManager
+    implementation(libs.androidx.work.runtime.ktx)
+
+    // Hilt
     implementation(libs.hilt.android)
-    ksp(libs.hilt.compiler)
-    implementation (libs.androidx.hilt.work)
+    kapt(libs.hilt.compiler)
+
+    // Hilt для WorkManager
+    implementation(libs.androidx.hilt.work)
+    kapt(libs.androidx.hilt.compiler)
+
+    // Для Kotlin Coroutines с WorkManager
+    implementation(libs.kotlinx.coroutines.android)
 
     // navigation
     implementation(libs.androidx.navigation.fragment.ktx)
@@ -107,7 +116,4 @@ dependencies {
 
     // recycler
     implementation(libs.androidx.recyclerview)
-
-    //workmanager
-    implementation(libs.androidx.work.runtime.ktx)
 }

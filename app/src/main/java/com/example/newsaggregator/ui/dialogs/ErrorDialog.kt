@@ -14,7 +14,7 @@ fun ErrorDialog(onDismiss: () -> Unit,
                 onConfirm: () -> Unit){
     AlertDialog(
         containerColor = MaterialTheme.colorScheme.errorContainer,
-        onDismissRequest = { onDismiss },
+        onDismissRequest = onDismiss,
         title = { Text(stringResource(R.string.error)) },
         text = { Text(stringResource(R.string.to_continue_you_need_an_internet_connection)) },
         confirmButton = {
@@ -22,9 +22,7 @@ fun ErrorDialog(onDismiss: () -> Unit,
                 colors = ButtonDefaults.buttonColors(
                     containerColor = MaterialTheme.colorScheme.error
                 ),
-                onClick = {
-                    onConfirm
-                }
+                onClick = onConfirm
             ) {
                 Text(stringResource(R.string.go_back))
             }
