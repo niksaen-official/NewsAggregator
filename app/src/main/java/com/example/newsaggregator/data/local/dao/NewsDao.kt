@@ -59,4 +59,20 @@ interface NewsDao {
         deleteContentsForNews(newsId)
         deleteNews(newsWithRelations.news)
     }
+
+    @Query("DELETE FROM NewsEntity")
+    suspend fun clearAllNews()
+
+    @Query("DELETE FROM CategoryEntity")
+    suspend fun clearAllCategories()
+
+    @Query("DELETE FROM ContentEntity")
+    suspend fun clearAllContents()
+
+    @Transaction
+    suspend fun clearAllData() {
+        clearAllContents()
+        clearAllCategories()
+        clearAllNews()
+    }
 }

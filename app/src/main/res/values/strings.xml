@@ -5,4 +5,11 @@
     <string name="title_activity_search_result">SearchResultActivity</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_web">WebActivity</string>
+    <string name="error">Error</string>
+    <string name="to_continue_you_need_an_internet_connection">To continue you need an internet connection.</string>
+    <string name="continue_text">Continue</string>
+    <string name="exit">Exit</string>
+    <string name="warning">Warning</string>
+    <string name="internet_connection_is_not_available">Internet connection is not available</string>
+    <string name="go_back">Go back</string>
 </resources>

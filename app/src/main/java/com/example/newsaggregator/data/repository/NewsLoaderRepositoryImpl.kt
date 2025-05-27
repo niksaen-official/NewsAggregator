@@ -1,5 +1,7 @@
 package com.example.newsaggregator.data.repository
 
+import android.content.Context
+import coil3.imageLoader
 import com.example.newsaggregator.data.convertors.NewsConverter
 import com.example.newsaggregator.data.local.dao.NewsDao
 import com.example.newsaggregator.data.remote.RssFeed
@@ -15,12 +17,15 @@ class NewsLoaderRepositoryImpl @Inject constructor(
 
     override suspend fun loadRemote(): List<ItemDto> {
         try {
+            newsDao.clearAllNews()
             val channel = rssFeed.getRss().channel
             return channel.items.map {
-                item -> item.copy(
-                    description = removeHtmlTags(item.description),
-                    pubDate = formatDate(item.pubDate)
+                val i = it.copy(
+                    description = removeHtmlTags(it.description),
+                    pubDate = formatDate(it.pubDate)
                 )
+                saveToLocal(i)
+                return@map i
             }
         } catch (e: Exception) {
             return emptyList()
@@ -36,6 +41,8 @@ class NewsLoaderRepositoryImpl @Inject constructor(
             converter.toDto(it)
         }
     }
+
+
 
     private fun removeHtmlTags(htmlText: String): String {
         return htmlText.replace(Regex("<[^>]*>"), "")

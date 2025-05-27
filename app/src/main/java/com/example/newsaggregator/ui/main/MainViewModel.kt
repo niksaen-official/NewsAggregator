@@ -27,15 +27,9 @@ class MainViewModel @Inject constructor(
 
     fun loadNews(){
         viewModelScope.launch {
-            if(isOnline){
-                originalNews = newsLoaderRepository.loadRemote()
-                originalNews.forEach {
-                    newsLoaderRepository.saveToLocal(it)
-                }
-            }
-            else{
-                originalNews = newsLoaderRepository.loadLocalSavedNews()
-            }
+            originalNews =
+                if(isOnline) newsLoaderRepository.loadRemote()
+                else newsLoaderRepository.loadLocalSavedNews()
             _isLoadingState.value = false
             _news.value = originalNews
         }
