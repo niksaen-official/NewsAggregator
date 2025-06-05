@@ -37,7 +37,7 @@ gantt
     dateFormat  YYYY-MM-DD
     todayMarker stroke=#000, thickness=4px
     section Завершено
-    Базовая лента новостей       :done,    task1, 2024-06-01, 15d
+    Базовая лента новостей       :done,    task1, 2025-05-27, 15d
     API News.org интеграция      :done,    task2, after task1, 10d
     section В процессе
     Pull-to-Refresh             :active,  task3, 2024-07-01, 7d
@@ -45,7 +45,7 @@ gantt
     Пагинация                   :         task4, after task3, 10d
     Подкатегории фильтров       :         task5, after task4, 12d
     Firebase Auth               :         task6, after task5, 14d
-    Комментарии/лайки           :crit,    task7, after task6, 21d
+    Комментарии/лайки           :         task7, after task6, 21d
 ```
 
 ### 📊 Статус по задачам
