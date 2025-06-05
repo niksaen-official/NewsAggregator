@@ -29,22 +29,36 @@
   - Coroutines & Flow — асинхронность  
   - Dagger Hilt — dependency injection  
 
-## 🛠 Roadmap (Приоритетный порядок)
+## 🚀 Roadmap NewsAggregator (Статус + Планы)
 
 ```mermaid
 gantt
-    title NewsAggregator Development Flow
+    title Прогресс разработки
     dateFormat  YYYY-MM-DD
-    todayMarker off
-    section UI/UX
-    Pull-to-Refresh          :ui1, 2024-07-10, 5d
-    Пагинация               :ui2, after ui1, 7d
-    Подкатегории фильтров   :ui3, after ui2, 10d
-    section Auth
-    Firebase Auth           :auth, after ui3, 12d
-    section Social
-    Комментарии/лайки      :soc, after auth, 18d
+    todayMarker stroke=#000, thickness=4px
+    section Завершено
+    Базовая лента новостей       :done,    task1, 2024-06-01, 15d
+    API News.org интеграция      :done,    task2, after task1, 10d
+    section В процессе
+    Pull-to-Refresh             :active,  task3, 2024-07-01, 7d
+    section Очередь
+    Пагинация                   :         task4, after task3, 10d
+    Подкатегории фильтров       :         task5, after task4, 12d
+    Firebase Auth               :         task6, after task5, 14d
+    Комментарии/лайки           :crit,    task7, after task6, 21d
 ```
+
+### 📊 Статус по задачам
+
+| Функция               | Готовность | Технологии                          |
+|-----------------------|------------|-------------------------------------|
+| ✅ Лента новостей      | 100%       | Retrofit, Jetpack Compose           |
+| ✅ API интеграция      | 100%       | Moshi, OkHttp Interceptors          |
+| 🟡 Pull-to-Refresh    | 40%        | `swipeRefreshLayout` (XML) / `pullRefresh` (Compose) |
+| ⚪️ Пагинация          | 0%         | Paging 3 Library + RemoteMediator   |
+| ⚪️ Подкатегории       | 0%         | Nested `FlowRow` + StateFlow        |
+| ⚪️ Firebase Auth      | 0%         | Firebase Auth, Hilt DI              |
+| 🔴 Комментарии        | 0%         | WebSocket, Room DB                  |
 
 ## 🚀 Запуск проекта  
 1. Склонируйте репозиторий:  
