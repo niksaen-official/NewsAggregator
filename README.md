@@ -33,3 +33,5 @@
 1. Склонируйте репозиторий:  
    ```bash
    git clone https://github.com/niksaen-official/NewsAggregator.git
+2. Откройте проект в Android Studio (версия Arctic Fox+).
+3. Запустите приложение через эмулятор или устройство.
