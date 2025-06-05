@@ -29,6 +29,23 @@
   - Coroutines & Flow — асинхронность  
   - Dagger Hilt — dependency injection  
 
+## 🛠 Roadmap (Приоритетный порядок)
+
+```mermaid
+gantt
+    title NewsAggregator Development Flow
+    dateFormat  YYYY-MM-DD
+    todayMarker off
+    section UI/UX
+    Pull-to-Refresh          :ui1, 2024-07-10, 5d
+    Пагинация               :ui2, after ui1, 7d
+    Подкатегории фильтров   :ui3, after ui2, 10d
+    section Auth
+    Firebase Auth           :auth, after ui3, 12d
+    section Social
+    Комментарии/лайки      :soc, after auth, 18d
+```
+
 ## 🚀 Запуск проекта  
 1. Склонируйте репозиторий:  
    ```bash
