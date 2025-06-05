@@ -33,8 +33,6 @@
 
 ```mermaid
 gantt
-    classDef done fill:#2ecc71,stroke:#27ae60,color:white
-    classDef active fill:#3498db,stroke:#2980b9,color:white
     title Прогресс разработки
     dateFormat  YYYY-MM-DD
     todayMarker stroke=#000, thickness=4px
