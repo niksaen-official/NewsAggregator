@@ -33,31 +33,40 @@
 
 ```mermaid
 gantt
+    classDef done fill:#2ecc71,stroke:#27ae60,color:white
+    classDef active fill:#3498db,stroke:#2980b9,color:white
     title Прогресс разработки
     dateFormat  YYYY-MM-DD
     todayMarker stroke=#000, thickness=4px
     section Завершено
-    Базовая лента новостей       :done,   task1, 2025-05-27, 15d
+    Базовый функционал          :done,    task1, 2025-05-13, 7d
+    Поиск                       :done,    task2, after task1, 2d
+    Кэширование                 :done,    task3, after task2, 3d
+    Обновление данных в фоне    :done,    task4, after task3, 4d
+    Фильтрация по категориям    :done,    task5, after task4, 3d
     section В процессе
-    Pull-to-Refresh             :active,  task2, after task1 7d
+    Pull-to-Refresh             :active,  task6, after task5, 14d
     section Очередь
-    Пагинация                   :         task3, after task2, 10d
-    Подкатегории фильтров       :         task4, after task3, 12d
-    Firebase Auth               :         task5, after task4, 14d
-    Комментарии/лайки           :         task6, after task5, 21d
+    Пагинация                   :         task7, after task6, 14d
+    Подкатегории фильтров       :         task8, after task7, 14d
+    Firebase Auth               :         task9, after task8, 14d
+    Комментарии/лайки           :         task10, after task9, 21d
 ```
 
 ### 📊 Статус по задачам
 
-| Функция               | Готовность | Технологии                          |
-|-----------------------|------------|-------------------------------------|
-| ✅ Лента новостей      | 100%       | Retrofit, Jetpack Compose           |
-| ✅ API интеграция      | 100%       | Moshi, OkHttp Interceptors          |
-| 🟡 Pull-to-Refresh    | 40%        | `swipeRefreshLayout` (XML) / `pullRefresh` (Compose) |
-| ⚪️ Пагинация          | 0%         | Paging 3 Library + RemoteMediator   |
-| ⚪️ Подкатегории       | 0%         | Nested `FlowRow` + StateFlow        |
-| ⚪️ Firebase Auth      | 0%         | Firebase Auth, Hilt DI              |
-| 🔴 Комментарии        | 0%         | WebSocket, Room DB                  |
+| Функция                   | Готовность |
+|---------------------------|------------|
+| ✅ Базовый функционал     | 100%        |
+| ✅ Поиск                  | 100%        |
+| ✅ Кэширование            | 100%        |
+| ✅ Обновление данных в фоне            | 100%        |
+| ✅ Фильтрация по категориям            | 100%        |
+| 🟡 Pull-to-Refresh    | 10%        |
+| ⚪️ Пагинация          | 0%         |
+| ⚪️ Подкатегории       | 0%         |
+| ⚪️ Firebase Auth      | 0%         |
+| ⚪️ Комментарии        | 0%         |
 
 ## 🚀 Запуск проекта  
 1. Склонируйте репозиторий:  
