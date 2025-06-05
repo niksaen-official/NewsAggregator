@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![API](https://img.shields.io/badge/API-21%2B-brightgreen)](https://android-arsenal.com/api?level=21)
 
-Приложение для удобного чтения новостей из разных источников в одном месте.  
+Приложение для удобного чтения новостей.  
 
 <p align="center">
   <img src="previews/screenshot_1.png" width="200">
