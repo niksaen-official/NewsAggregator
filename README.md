@@ -37,9 +37,9 @@ gantt
     dateFormat  YYYY-MM-DD
     todayMarker stroke=#000, thickness=4px
     section Завершено
-    Базовая лента новостей       :done,    task1, 2025-05-27, 15d
+    Базовая лента новостей       :done,   task1, 2025-05-27, 15d
     section В процессе
-    Pull-to-Refresh             :active,   task2, after task1 7d
+    Pull-to-Refresh             :active,  task2, after task1 7d
     section Очередь
     Пагинация                   :         task3, after task2, 10d
     Подкатегории фильтров       :         task4, after task3, 12d
