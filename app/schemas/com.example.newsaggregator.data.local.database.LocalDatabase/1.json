@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "ca852eaf8f797348d1e9cefdcce591a0",
+    "identityHash": "fb9ffd018a3f97829e451e9203a1070b",
     "entities": [
       {
-        "tableName": "NewsEntity",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `title` TEXT NOT NULL, `link` TEXT NOT NULL, `description` TEXT NOT NULL, `pubDate` TEXT NOT NULL, `guid` TEXT NOT NULL, `dcCreator` TEXT NOT NULL, `dcDate` TEXT NOT NULL)",
+        "tableName": "PostEntity",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `title` TEXT NOT NULL, `link` TEXT NOT NULL, `description` TEXT NOT NULL, `pubDate` TEXT NOT NULL, `guid` TEXT NOT NULL, `dcCreator` TEXT NOT NULL, `dcDate` TEXT NOT NULL, `mainCategory` TEXT NOT NULL)",
         "fields": [
           {
             "fieldPath": "id",
@@ -53,6 +53,12 @@
           {
             "fieldPath": "dcDate",
             "columnName": "dcDate",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mainCategory",
+            "columnName": "mainCategory",
             "affinity": "TEXT",
             "notNull": true
           }
@@ -153,7 +159,7 @@
     ],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'ca852eaf8f797348d1e9cefdcce591a0')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'fb9ffd018a3f97829e451e9203a1070b')"
     ]
   }
 }

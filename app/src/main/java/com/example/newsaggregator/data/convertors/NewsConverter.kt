@@ -3,15 +3,15 @@ package com.example.newsaggregator.data.convertors
 import com.example.newsaggregator.data.local.entity.CategoryEntity
 import com.example.newsaggregator.data.local.entity.ContentEntity
 import com.example.newsaggregator.data.local.entity.CreditEntity
-import com.example.newsaggregator.data.local.entity.NewsEntity
-import com.example.newsaggregator.data.local.entity.NewsWithRelations
+import com.example.newsaggregator.data.local.entity.PostEntity
+import com.example.newsaggregator.data.local.entity.PostWithRelations
 import com.example.newsaggregator.data.remote.dto.CategoryDto
 import com.example.newsaggregator.data.remote.dto.ContentDto
 import com.example.newsaggregator.data.remote.dto.CreditDto
 import com.example.newsaggregator.data.remote.dto.ItemDto
 
 class NewsConverter {
-    fun toDto(newsWithRelations: NewsWithRelations): ItemDto {
+    fun toDto(newsWithRelations: PostWithRelations): ItemDto {
         return ItemDto(
             newsWithRelations.news.title,
             newsWithRelations.news.link,
@@ -39,8 +39,8 @@ class NewsConverter {
         }
     }
 
-    fun toEntity(news: ItemDto): NewsWithRelations {
-        val newsEntity = NewsEntity(
+    fun toEntity(news: ItemDto, category: String): PostWithRelations {
+        val newsEntity = PostEntity(
             0,
             news.title,
             news.link,
@@ -48,9 +48,10 @@ class NewsConverter {
             news.pubDate,
             news.guid,
             news.dcCreator,
-            news.dcDate
+            news.dcDate,
+            category
         )
-        return NewsWithRelations(
+        return PostWithRelations(
             newsEntity,
             toCategoriesEntityList(news.categories),
             toContentEntityList(news.contents)

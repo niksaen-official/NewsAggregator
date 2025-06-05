@@ -4,7 +4,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-data class NewsEntity(
+data class PostEntity(
     @PrimaryKey(autoGenerate = true)
     val id:Long,
     val title: String,
@@ -13,5 +13,6 @@ data class NewsEntity(
     var pubDate: String,
     val guid: String,
     val dcCreator: String,
-    val dcDate: String
+    val dcDate: String,
+    val mainCategory: String
 )

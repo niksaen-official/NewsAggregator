@@ -17,9 +17,6 @@ fun LoadingScreen(paddingValues: PaddingValues) {
             .fillMaxSize()
             .padding(paddingValues)
     ) {
-        Column {
-            Header({})
-        }
         CircularProgressIndicator(
             modifier = Modifier.align(Alignment.Center)
         )

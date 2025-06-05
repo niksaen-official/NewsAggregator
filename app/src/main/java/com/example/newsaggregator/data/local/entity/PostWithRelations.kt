@@ -2,11 +2,10 @@ package com.example.newsaggregator.data.local.entity
 
 import androidx.room.Embedded
 import androidx.room.Relation
-import com.example.newsaggregator.data.remote.dto.ItemDto
 
-data class NewsWithRelations(
+data class PostWithRelations(
     @Embedded
-    val news: NewsEntity,
+    val news: PostEntity,
 
     @Relation(
         parentColumn = "id",

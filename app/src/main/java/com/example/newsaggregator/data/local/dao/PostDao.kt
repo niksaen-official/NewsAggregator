@@ -6,19 +6,18 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Transaction
-import androidx.room.Update
 import com.example.newsaggregator.data.local.entity.CategoryEntity
 import com.example.newsaggregator.data.local.entity.ContentEntity
-import com.example.newsaggregator.data.local.entity.NewsEntity
-import com.example.newsaggregator.data.local.entity.NewsWithRelations
+import com.example.newsaggregator.data.local.entity.PostEntity
+import com.example.newsaggregator.data.local.entity.PostWithRelations
 
 @Dao
-interface NewsDao {
+interface PostDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertNews(news: NewsEntity): Long
+    suspend fun insertNews(news: PostEntity): Long
 
     @Delete
-    suspend fun deleteNews(news: NewsEntity)
+    suspend fun deleteNews(news: PostEntity)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertCategories(categories: List<CategoryEntity>)
@@ -34,11 +33,11 @@ interface NewsDao {
 
 
     @Transaction
-    @Query("SELECT * FROM NewsEntity")
-    suspend fun getAllNewsWithRelations(): List<NewsWithRelations>
+    @Query("SELECT * FROM PostEntity WHERE mainCategory=:category")
+    suspend fun getAllNewsWithRelations(category: String): List<PostWithRelations>
 
     @Transaction
-    suspend fun insertFullNews(newsWithRelations: NewsWithRelations) {
+    suspend fun insertFullNews(newsWithRelations: PostWithRelations) {
         val newsId = insertNews(newsWithRelations.news)
 
         val categories = newsWithRelations.categories.map {
@@ -53,15 +52,15 @@ interface NewsDao {
     }
 
     @Transaction
-    suspend fun deleteFullNews(newsWithRelations: NewsWithRelations) {
+    suspend fun deleteFullNews(newsWithRelations: PostWithRelations) {
         val newsId = newsWithRelations.news.id
         deleteCategoriesForNews(newsId)
         deleteContentsForNews(newsId)
         deleteNews(newsWithRelations.news)
     }
 
-    @Query("DELETE FROM NewsEntity")
-    suspend fun clearAllNews()
+    @Query("DELETE FROM PostEntity WHERE mainCategory = :category")
+    suspend fun clearAllNews(category: String)
 
     @Query("DELETE FROM CategoryEntity")
     suspend fun clearAllCategories()
@@ -70,9 +69,9 @@ interface NewsDao {
     suspend fun clearAllContents()
 
     @Transaction
-    suspend fun clearAllData() {
+    suspend fun clearAllData(category: String) {
         clearAllContents()
         clearAllCategories()
-        clearAllNews()
+        clearAllNews(category)
     }
 }

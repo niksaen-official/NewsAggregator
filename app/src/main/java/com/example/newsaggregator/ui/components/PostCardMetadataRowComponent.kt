@@ -17,7 +17,7 @@ import androidx.compose.ui.unit.dp
 import com.example.newsaggregator.R
 
 @Composable
-fun NewsCardMetadataRow(publishedData: String,creator: String){
+fun PostCardMetadataRow(publishedData: String,creator: String){
     Row(modifier = Modifier.fillMaxWidth()) {
         if(creator.isNotEmpty()){
             Text(

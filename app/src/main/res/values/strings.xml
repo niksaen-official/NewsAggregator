@@ -12,4 +12,11 @@
     <string name="warning">Warning</string>
     <string name="internet_connection_is_not_available">Internet connection is not available</string>
     <string name="go_back">Go back</string>
+    <string-array name="categories">
+        <item>News</item>
+        <item>Opinion</item>
+        <item>Sport</item>
+        <item>Culture</item>
+        <item>Lifestyle</item>
+    </string-array>
 </resources>

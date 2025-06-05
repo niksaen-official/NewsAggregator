@@ -8,6 +8,7 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import nl.adaptivity.xmlutil.serialization.XML
 import okhttp3.MediaType.Companion.toMediaType
+import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 
 @Module
@@ -17,11 +18,8 @@ class RetrofitModule {
     @Provides
     fun retrofit() = Retrofit.Builder()
             .baseUrl("https://www.theguardian.com")
-            .addConverterFactory(
-                XML.asConverterFactory(
-                    "application/xml; charset=UTF8".toMediaType()
-                )
-            ).build()
+            .addConverterFactory(XML.asConverterFactory("application/xml; charset=UTF8".toMediaType()))
+            .build()
 
     @Provides
     fun rss(retrofit: Retrofit): RssFeed = retrofit.create(RssFeed::class.java)
