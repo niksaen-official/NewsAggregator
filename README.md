@@ -7,27 +7,30 @@
 Приложение для удобного чтения новостей.  
 
 <p align="center">
-  <img src="previews/screenshot_1.png" width="200">
-  <img src="previews/screenshot_2.png" width="200">
-  <img src="previews/screenshot_2.png" width="200">
-  <img src="previews/screenshot_3.png" width="200">
+  <img src="previews/screenshot_1.png" width="200" alt="Главный экран">
+  <img src="previews/screenshot_2.png" width="200" alt="Экран поиска">
+  <img src="previews/screenshot_3.png" width="200" alt="Тёмная тема">
+  <img src="previews/screenshot_4.png" width="200" alt="Фильтрация">
 </p>
 
 ## 🔥 Возможности  
-- 📡 Загрузка новостей из [The Guardian](https://www.theguardian.com/).  
-- 🔍 Поиск и фильтрация по категориям.  
-- 💾 Кэширование для оффлайн-доступа.  
-- 🌙 Поддержка тёмной темы.  
+- 📡 Загрузка новостей из [The Guardian API](https://open-platform.theguardian.com/)
+- 🔍 Поиск
+- 🗂 Фильтрация по категориям
+- 💾 Оффлайн-режим
+- 🌙 Адаптивный UI (светлая/тёмная тема)
+
 
 ## 🛠 Технологии  
-- **Язык**: Kotlin  
-- **Архитектура**: MVVM + Clean Architecture  
-- **Библиотеки**:  
-  - Retrofit + Gson — работа с API  
-  - Room — локальная база данных  
-  - Jetpack Compose — UI  
-  - Coroutines & Flow — асинхронность  
-  - Dagger Hilt — dependency injection  
+| Компонент       | Реализация                          |
+|-----------------|-------------------------------------|
+| **Язык**        | Kotlin                     |
+| **Архитектура** | MVVM + Clean Architecture           |
+| **UI**          | Jetpack Compose + Material 3        |
+| **Сеть**        | Retrofit 2 + OkHttp         |
+| **Локальная БД**| Room                 |
+| **DI**          | Dagger Hilt                         |
+| **Асинхронность**| Coroutines + Flow + StateFlow      |
 
 ## 🚀 Roadmap NewsAggregator (Статус + Планы)
 
@@ -43,13 +46,14 @@ gantt
     Обновление данных в фоне    :done,    task4, after task3, 4d
     Фильтрация по категориям    :done,    task5, after task4, 3d
     section В процессе
-    Pull-to-Refresh             :active,  task6, after task5, 14d
+    Pull-to-Refresh             :active,  task6, after task5, 21d
     section Очередь
     Пагинация                   :         task7, after task6, 14d
     Подкатегории фильтров       :         task8, after task7, 14d
     Firebase Auth               :         task9, after task8, 14d
     Комментарии/лайки           :         task10, after task9, 21d
 ```
+
 
 ### 📊 Статус по задачам
 
