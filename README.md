@@ -46,12 +46,11 @@ gantt
     Обновление данных в фоне    :done,    task4, after task3, 4d
     Фильтрация по категориям    :done,    task5, after task4, 3d
     section В процессе
-    Pull-to-Refresh             :active,  task6, after task5, 21d
+    Pull-to-Refresh             :active,  task6, after task5, 14d
     section Очередь
-    Пагинация                   :         task7, after task6, 14d
-    Подкатегории фильтров       :         task8, after task7, 14d
-    Firebase Auth               :         task9, after task8, 14d
-    Комментарии/лайки           :         task10, after task9, 21d
+    Подкатегории фильтров       :         task7, after task6, 14d
+    Firebase Auth               :         task8, after task7, 14d
+    Комментарии/лайки           :         task9, after task8, 21d
 ```
 
 
