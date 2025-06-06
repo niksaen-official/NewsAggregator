@@ -14,7 +14,7 @@
 </p>
 
 ## 🔥 Возможности  
-- 📡 Загрузка новостей из [The Guardian API](https://open-platform.theguardian.com/)
+- 📡 Загрузка новостей из [The Guardian](https://www.theguardian.com/)
 - 🔍 Поиск
 - 🗂 Фильтрация по категориям
 - 💾 Оффлайн-режим
