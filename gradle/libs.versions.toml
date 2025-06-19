@@ -1,5 +1,6 @@
 [versions]
-agp = "8.7.2"
+accompanistSwiperefresh = "0.25.1"
+agp = "8.7.3"
 coil = "3.2.0"
 hiltWork = "1.2.0"
 kotlin = "2.0.21"
@@ -7,27 +8,28 @@ coreKtx = "1.16.0"
 junit = "4.14-SNAPSHOT"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
-lifecycleRuntimeKtx = "2.9.0"
+lifecycleRuntimeKtx = "2.9.1"
 activityCompose = "1.10.1"
-composeBom = "2025.05.01"
+composeBom = "2025.06.01"
 retrofit = "2.11.0"
 retrofit2KotlinxSerializationConverter = "1.0.0"
-workRuntimeKtx = "2.9.0"
+workRuntimeKtx = "2.10.2"
 xmlUtil = "0.91.0"
-room = "2.7.1"
+room = "2.7.2"
 hilt-version = "2.51.1"
 ksp-version = "2.0.21-1.0.27"
 recyclerviewVersion = "1.4.0"
 navigationUiKtx = "2.9.0"
 kotlinxCoroutines = "1.10.2"
-lifecycleLivedataKtx = "2.9.0"
-lifecycleViewmodelKtx = "2.9.0"
-appcompat = "1.7.0"
+lifecycleLivedataKtx = "2.9.1"
+lifecycleViewmodelKtx = "2.9.1"
+appcompat = "1.7.1"
 material = "1.12.0"
 activity = "1.10.1"
 constraintlayout = "2.2.1"
 
 [libraries]
+accompanist-swiperefresh = { module = "com.google.accompanist:accompanist-swiperefresh", version.ref = "accompanistSwiperefresh" }
 androidx-hilt-compiler = { module = "androidx.hilt:hilt-compiler", version.ref = "hiltWork" }
 androidx-hilt-work = { module = "androidx.hilt:hilt-work", version.ref = "hiltWork" }
 androidx-lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycleLivedataKtx" }
@@ -70,7 +72,6 @@ androidx-activity = { group = "androidx.activity", name = "activity", version.re
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 
 [plugins]
-kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }

@@ -25,11 +25,14 @@ class MainViewModel @Inject constructor(
 
     private val _posts = MutableStateFlow<List<ItemDto>>(emptyList())
     private val _isLoadingState = MutableStateFlow<Boolean>(true)
+    private val _isReloadingState = MutableStateFlow<Boolean>(false)
     private val _currentCategory = MutableStateFlow<Int>(0)
     private var originalPosts: List<ItemDto> = emptyList()
+    private var query: String = ""
 
     val posts: StateFlow<List<ItemDto>> = _posts
     val isLoading: StateFlow<Boolean> = _isLoadingState
+    val isReloading: StateFlow<Boolean> = _isReloadingState
     val currentCategory: StateFlow<Int> = _currentCategory
     val isOnline get() = networkStatusChecker.isOnline()
 
@@ -39,9 +42,28 @@ class MainViewModel @Inject constructor(
             originalPosts =
                 if(isOnline) postLoaderRepository.loadRemote(category)
                 else postLoaderRepository.loadLocalSavedNews(category)
-            _isLoadingState.value = false
             _posts.value = originalPosts
-            Log.d("MainViewModel",originalPosts.toString())
+            if(query.isNotEmpty()) search(query)
+            _isLoadingState.value = false
+        }
+    }
+    fun reloadNews(){
+        _isReloadingState.value = true
+        val category = when(_currentCategory.value){
+            0->International
+            1->Commentisfree
+            2->Sport
+            3->Culture
+            4->LifeAndStyle
+            else -> International
+        }
+        viewModelScope.launch {
+            originalPosts =
+                if(isOnline) postLoaderRepository.loadRemote(category)
+                else postLoaderRepository.loadLocalSavedNews(category)
+            _posts.value = originalPosts
+            if(query.isNotEmpty()) search(query)
+            _isReloadingState.value = false
         }
     }
 
@@ -60,6 +82,7 @@ class MainViewModel @Inject constructor(
         if (query.isEmpty()) {
             _posts.value = originalPosts
         } else {
+            this.query = query
             _posts.value = originalPosts.filter { item ->
                 item.title.contains(query, ignoreCase = true) ||
                         item.description.contains(query, ignoreCase = true)
