@@ -49,7 +49,7 @@ gantt
     section В процессе
     Pull-to-Refresh             :done,  task6, after task5, 18d
     section Очередь
-    Подкатегории фильтров       :active         task7, after task6, 14d
+    Подкатегории фильтров       :active,         task7, after task6, 14d
     Firebase Auth               :         task8, after task7, 14d
     Комментарии/лайки           :         task9, after task8, 21d
 ```
