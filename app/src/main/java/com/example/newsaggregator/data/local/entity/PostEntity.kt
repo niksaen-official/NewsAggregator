@@ -14,5 +14,6 @@ data class PostEntity(
     val guid: String,
     val dcCreator: String,
     val dcDate: String,
-    val mainCategory: String
+    val mainCategory: Int,
+    val subCategory:Int
 )

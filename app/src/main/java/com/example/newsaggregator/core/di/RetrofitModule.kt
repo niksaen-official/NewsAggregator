@@ -16,8 +16,8 @@ import retrofit2.Retrofit
 class RetrofitModule {
 
     @Provides
-    fun retrofit() = Retrofit.Builder()
-            .baseUrl("https://www.theguardian.com")
+    fun retrofit(): Retrofit = Retrofit.Builder()
+            .baseUrl("https://www.theguardian.com/")
             .addConverterFactory(XML.asConverterFactory("application/xml; charset=UTF8".toMediaType()))
             .build()
 

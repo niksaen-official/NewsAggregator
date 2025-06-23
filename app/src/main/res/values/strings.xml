@@ -19,4 +19,55 @@
         <item>Culture</item>
         <item>Lifestyle</item>
     </string-array>
+    <string-array name="news">
+        <item>World</item>
+        <item>Europe</item>
+        <item>US</item>
+        <item>Americas</item>
+        <item>Asia</item>
+        <item>Australia</item>
+        <item>Middle East</item>
+        <item>Africa</item>
+        <item>Inequality</item>
+        <item>Global development</item>
+    </string-array>
+    <string-array name="opinion">
+        <item>The Guardian view</item>
+        <item>Columnists</item>
+        <item>Cartoons</item>
+        <item>Opinion videos</item>
+    </string-array>
+    <string-array name="sport">
+        <item>Football</item>
+        <item>Cricket</item>
+        <item>Rugby union</item>
+        <item>Tennis</item>
+        <item>Cycling</item>
+        <item>F1</item>
+        <item>Golf</item>
+        <item>US sports</item>
+    </string-array>
+    <string-array name="culture">
+        <item>Books</item>
+        <item>Music</item>
+        <item>TV &amp; radio</item>
+        <item>Art &amp; design</item>
+        <item>Film</item>
+        <item>Games</item>
+        <item>Classical</item>
+        <item>Stage</item>
+    </string-array>
+    <string-array name="lifestyle">
+        <item>Fashion</item>
+        <item>Food</item>
+        <item>Recipes</item>
+        <item>Love &amp; sex</item>
+        <item>Health &amp; fitness</item>
+        <item>Home &amp; garden</item>
+        <item>Women</item>
+        <item>Men</item>
+        <item>Family</item>
+        <item>Travel</item>
+        <item>Money</item>
+    </string-array>
 </resources>

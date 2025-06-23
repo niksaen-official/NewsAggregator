@@ -33,8 +33,8 @@ interface PostDao {
 
 
     @Transaction
-    @Query("SELECT * FROM PostEntity WHERE mainCategory=:category")
-    suspend fun getAllNewsWithRelations(category: String): List<PostWithRelations>
+    @Query("SELECT * FROM PostEntity WHERE mainCategory=:category AND subCategory=:subcategory")
+    suspend fun getAllNewsWithRelations(category:Int,subcategory:Int): List<PostWithRelations>
 
     @Transaction
     suspend fun insertFullNews(newsWithRelations: PostWithRelations) {
@@ -59,8 +59,8 @@ interface PostDao {
         deleteNews(newsWithRelations.news)
     }
 
-    @Query("DELETE FROM PostEntity WHERE mainCategory = :category")
-    suspend fun clearAllNews(category: String)
+    @Query("DELETE FROM PostEntity WHERE mainCategory = :category AND subCategory=:subcategory")
+    suspend fun clearAllNews(category:Int,subcategory:Int)
 
     @Query("DELETE FROM CategoryEntity")
     suspend fun clearAllCategories()
@@ -69,9 +69,9 @@ interface PostDao {
     suspend fun clearAllContents()
 
     @Transaction
-    suspend fun clearAllData(category: String) {
+    suspend fun clearAllData(category:Int,subcategory:Int) {
         clearAllContents()
         clearAllCategories()
-        clearAllNews(category)
+        clearAllNews(category,subcategory)
     }
 }

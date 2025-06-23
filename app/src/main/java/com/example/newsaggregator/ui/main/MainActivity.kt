@@ -26,7 +26,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil3.imageLoader
-import com.example.newsaggregator.data.remote.International
 import com.example.newsaggregator.ui.components.Header
 import com.example.newsaggregator.ui.components.LoadingScreen
 import com.example.newsaggregator.ui.components.PostCardItem
@@ -42,7 +41,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        vm.loadNews(International)
+        vm.loadNews()
         if(vm.isOnline){
             val imageLoader = this.imageLoader
             imageLoader.diskCache?.clear()
@@ -62,7 +61,8 @@ class MainActivity : ComponentActivity() {
     fun Main(paddingValues: PaddingValues){
         var showWarningDialog by remember { mutableStateOf(true) }
         val news by vm.posts.collectAsStateWithLifecycle()
-        val currentCategory by vm.currentCategory.collectAsStateWithLifecycle()
+        val category by vm.category.collectAsStateWithLifecycle()
+        val subCategory by vm.subCategory.collectAsStateWithLifecycle()
         val isLoading by vm.isLoading.collectAsStateWithLifecycle()
         val isReloading by vm.isReloading.collectAsStateWithLifecycle()
         val state = rememberPullToRefreshState()
@@ -90,8 +90,10 @@ class MainActivity : ComponentActivity() {
             Column(modifier = Modifier.padding(paddingValues)) {
                 Header(
                     onSearchBtnClick = { vm.search(it) },
-                    onCategoryChanged = { vm.categoryChanged(it) },
-                    currentCategory
+                    onCategoryChanged = { vm.changeCategory(it) },
+                    changedCategory = category,
+                    onSubCategoryChanged = { vm.changeSubCategory(it) },
+                    changedSubCategory = subCategory
                 )
                 if(!isLoading){
                     LazyColumn {

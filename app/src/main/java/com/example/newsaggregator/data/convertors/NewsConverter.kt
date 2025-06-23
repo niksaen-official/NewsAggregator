@@ -39,7 +39,7 @@ class NewsConverter {
         }
     }
 
-    fun toEntity(news: ItemDto, category: String): PostWithRelations {
+    fun toEntity(news: ItemDto,category:Int,subcategory:Int): PostWithRelations {
         val newsEntity = PostEntity(
             0,
             news.title,
@@ -49,7 +49,8 @@ class NewsConverter {
             news.guid,
             news.dcCreator,
             news.dcDate,
-            category
+            category,
+            subcategory
         )
         return PostWithRelations(
             newsEntity,

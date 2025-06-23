@@ -6,8 +6,7 @@ import androidx.compose.ui.res.stringArrayResource
 import com.example.newsaggregator.R
 
 @Composable
-fun CategoryChangerRow(onCategoryChanged:(Int)->Unit,changedCategory:Int){
-    val categories = stringArrayResource(R.array.categories)
+fun CategoryChangerRow(onCategoryChanged:(Int)->Unit,changedCategory:Int,categories: Array<String>){
     LazyRow{
         items(categories.size) {
             CategoryItem(categories[it],changedCategory==it) { onCategoryChanged.invoke(it) }

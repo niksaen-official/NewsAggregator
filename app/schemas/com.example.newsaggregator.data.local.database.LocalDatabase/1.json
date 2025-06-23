@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "fb9ffd018a3f97829e451e9203a1070b",
+    "identityHash": "968c90351d21ca70cd58bba26a04e4d8",
     "entities": [
       {
         "tableName": "PostEntity",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `title` TEXT NOT NULL, `link` TEXT NOT NULL, `description` TEXT NOT NULL, `pubDate` TEXT NOT NULL, `guid` TEXT NOT NULL, `dcCreator` TEXT NOT NULL, `dcDate` TEXT NOT NULL, `mainCategory` TEXT NOT NULL)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `title` TEXT NOT NULL, `link` TEXT NOT NULL, `description` TEXT NOT NULL, `pubDate` TEXT NOT NULL, `guid` TEXT NOT NULL, `dcCreator` TEXT NOT NULL, `dcDate` TEXT NOT NULL, `mainCategory` INTEGER NOT NULL, `subCategory` INTEGER NOT NULL)",
         "fields": [
           {
             "fieldPath": "id",
@@ -59,7 +59,13 @@
           {
             "fieldPath": "mainCategory",
             "columnName": "mainCategory",
-            "affinity": "TEXT",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "subCategory",
+            "columnName": "subCategory",
+            "affinity": "INTEGER",
             "notNull": true
           }
         ],
@@ -159,7 +165,7 @@
     ],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'fb9ffd018a3f97829e451e9203a1070b')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '968c90351d21ca70cd58bba26a04e4d8')"
     ]
   }
 }
