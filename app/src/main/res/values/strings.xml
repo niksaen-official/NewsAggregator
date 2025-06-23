@@ -2,9 +2,6 @@
     <string name="app_name">NewsAggregator</string>
     <string name="creator">Creator:\n%1$s</string>
     <string name="published">Published:\n%1$s</string>
-    <string name="title_activity_search_result">SearchResultActivity</string>
-    <string name="title_activity_main">MainActivity</string>
-    <string name="title_activity_web">WebActivity</string>
     <string name="error">Error</string>
     <string name="to_continue_you_need_an_internet_connection">To continue you need an internet connection.</string>
     <string name="continue_text">Continue</string>

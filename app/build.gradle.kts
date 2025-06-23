@@ -11,15 +11,15 @@ plugins {
 }
 
 android {
-    namespace = "com.example.newsaggregator"
+    namespace = "com.niksaengames.newsaggregator"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.newsaggregator"
+        applicationId = "com.niksaengames.newsaggregator"
         minSdk = 24
         targetSdk = 34
-        versionCode = 2
-        versionName = "1.1"
+        versionCode = 3
+        versionName = "1.2"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
