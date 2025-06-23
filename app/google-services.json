@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "393433594152",
+    "project_id": "newsaggregator-fdbe7",
+    "storage_bucket": "newsaggregator-fdbe7.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:393433594152:android:ee10e1a89f1cd660fa781d",
+        "android_client_info": {
+          "package_name": "com.niksaengames.newsaggregator"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyENVYW7TSSSBCRR50lFOPokLlph0b_dM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
